@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<words>
+	<word>
+		<english>book</english>
+		<russian>книга</russian>
+		<unit>1</unit>
+	</word>
+	<word>
+		<english>cat</english>
+		<russian>кошка</russian>
+		<unit>1</unit>
+	</word>
+	<word>
+		<english>very</english>
+		<russian>очень</russian>
+		<unit>2</unit>
+	</word>
+</words>
