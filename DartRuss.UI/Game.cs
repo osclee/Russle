@@ -9,6 +9,14 @@ namespace DartRuss.UI
     public class Game
     {
         public String Answer { get; private set; }
+        public String English { get; private set; }
+        public char[] LastRow
+        {
+            get
+            {
+                return GameBoard[LastIndex / 5];
+            }
+        }
 
         public static int BOARD_SIZE = 25;
 
@@ -17,8 +25,6 @@ namespace DartRuss.UI
         public WinTypes WinStatus { get; private set; } = WinTypes.PLAYING;
 
         private int boardIndex;
-        //private int row;
-        //private int column;
         public char[][] GameBoard { get; private set; } =
         {
             new char[] {' ', ' ', ' ', ' ', ' ' },
@@ -31,9 +37,15 @@ namespace DartRuss.UI
 
         public Game()
         {
-            var words = ReadWords.ReadXML();
+            var russianWords = ReadWords.ReadRussian();
+            var englishWords = ReadWords.ReadEnglish();
+
             var random = new Random();
-            Answer = words[random.Next(0, words.Length)];
+            var randomNum = random.Next(0, russianWords.Length);
+
+            Answer = russianWords[randomNum];
+            English = englishWords[randomNum]; 
+
 
             boardIndex = 0;
             permissionToMoveNextRow = false;
@@ -52,11 +64,11 @@ namespace DartRuss.UI
 
         public void RemoveSquare()
         {
-            if (boardIndex >= 0)
+            if (boardIndex == 1 || boardIndex > LastIndex + 1)
             {
                 boardIndex--;
                 GameBoard[boardIndex / 5][boardIndex % 5] = ' ';
-                
+                permissionToMoveNextRow = true;
             }
         }
         public GuessEnum[] Check()
@@ -101,75 +113,5 @@ namespace DartRuss.UI
         }
 
         public bool CheckAvaliable() => !SquareAvailable();
-
-        /**
-         * returns: int of the current square being modified
-         */
-        /* public int Guess(char guess)
-         {
-
-             if (SquareIndex < 25)
-             {
-                 gameBoard[SquareIndex / 5][SquareIndex % 5] = guess;
-                 SquareIndex++;
-             }
-
-             /*if (SquareIndex >= 24)
-             {
-                 gameBoard[4][4] = guess;
-             } 
-             else
-             {
-                 gameBoard[SquareIndex / 5][SquareIndex % 5] = guess;
-                 SquareIndex++;
-             } */
-
-        // return SquareIndex;
-        //}
-        /*
-        public void RemoveGuess()
-        {
-            if (SquareIndex == 0) return;
-
-            if (SquareIndex < 25) 
-            { 
-                gameBoard[SquareIndex / 5][SquareIndex % 5] = '\0';
-                SquareIndex--;
-            }
-
-            /*if (SquareIndex == 24)
-            {
-                gameBoard[4][4] = '\0';
-            }
-            else
-            {
-                gameBoard[SquareIndex / 5][SquareIndex % 5] = '\0';
-            }*/
-
-
-        //} */
-
-        /*public GuessEnum[] CheckRow()
-        {
-            // if ()
-
-
-
-            //var column = SquareIndex / 5 == 5 ? true : SquareIndex % 5;
-            //var row = SquareIndex / 5 == 5 ? 4 : SquareIndex / 5;
-            /*if (column == 0 && SquareIndex != 0) // If at end of row and not at the start...
-            {
-                var toReturn = new GuessEnum[] { GuessEnum.INCORRECT, GuessEnum.INCORRECT, GuessEnum.INCORRECT, GuessEnum.INCORRECT, GuessEnum.INCORRECT };
-
-                for (int i = 0; i < 5; i++)
-                {
-                    
-                }
-            } 
-            
-            return null; */
-        // return null;
-        // }
-
     }
 }

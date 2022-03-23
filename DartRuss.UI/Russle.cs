@@ -15,47 +15,30 @@
             var label = (Label)sender;
             var guess = label.Text[0];
 
-            // adjust label
-            //label.BorderStyle = BorderStyle.Fixed3D;
-
-            //change square
-
-
             game.FillSquare(guess);
             UpdateBoard();
-
-
-
-
-           
-            //currentSquareLabel(game.SquareIndex).Text = label.Text;
-
-            //game.Guess(label.Text[0]);
-            
-
         }
 
         private void Enter_Click(object sender, EventArgs e)
         {
             if (game.CheckAvaliable())
             {
+
                 UpdateResults();
 
                 if(game.WinStatus != WinTypes.PLAYING)
                 {
                     if (game.WinStatus == WinTypes.WON)
                     {
-                        Result.Text = "Winner!";
+                        Result.Text = $"Winner! {game.Answer} - {game.English}";
                         Result.ForeColor = Color.Green;
                     } else
                     {
-                        Result.Text = "Loser!";
+                        Result.Text = $"Loser! {game.Answer} - {game.English}";
                         Result.ForeColor = Color.Red;
                     }
-
                 }
             }
-
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -76,27 +59,101 @@
         private void UpdateResults()
         {
             var results = game.Check();
-            var lastIndex = game.LastIndex;
             var startIndex = game.LastIndex - 4;
-
             for (int i = 0; i < 5; i++)
             {
                 switch (results[i])
                 {
                     case GuessEnum.INCORRECT:
                         CurrentSquareLabel(startIndex + i).BackColor = Color.DarkGray;
+                        CurrentKeyboardLabel(game.LastRow[i]).BackColor = Color.DarkGray;
                         break;
                     case GuessEnum.WRONGSPOT:
                         CurrentSquareLabel(startIndex + i).BackColor = Color.Yellow;
+                        CurrentKeyboardLabel(game.LastRow[i]).BackColor = Color.Yellow;
                         break;
                     case GuessEnum.CORRECTSPOT:
                         CurrentSquareLabel(startIndex + i).BackColor = Color.Green;
+                        CurrentKeyboardLabel(game.LastRow[i]).BackColor = Color.Green;
                         break;
                 }
             }
  
         }
-        
+
+        private Label CurrentKeyboardLabel(char currentKeyboard)
+        {
+            switch (currentKeyboard)
+            {
+                case 'й':
+                    return l0;
+                case 'ц':
+                    return l1;
+                case 'у':
+                    return l2;
+                case 'к':
+                    return l3;
+                case 'е':
+                    return l4;
+                case 'н':
+                    return l5;
+                case 'г':
+                    return l6;
+                case 'ш':
+                    return l7;
+                case 'щ':
+                    return l8;
+                case 'з':
+                    return l9;
+                case 'х':
+                    return l10;
+                case 'ъ':
+                    return l11;
+                case 'ф':
+                    return l12;
+                case 'ы':
+                    return l13;
+                case 'в':
+                    return l14;
+                case 'а':
+                    return l15;
+                case 'п':
+                    return l16;
+                case 'р':
+                    return l17;
+                case 'о':
+                    return l18;
+                case 'л':
+                    return l19;
+                case 'д':
+                    return l20;
+                case 'ж':
+                    return l21;
+                case 'э':
+                    return l22;
+                case 'я':
+                    return l23;
+                case 'ч':
+                    return l24;
+                case 'с':
+                    return l25;
+                case 'м':
+                    return l26;
+                case 'и':
+                    return l27;
+                case 'т':
+                    return l28;
+                case 'ь':
+                    return l29;
+                case 'б':
+                    return l30;
+                case 'ю':
+                    return l31;
+                default:
+                    return l0;
+            }
+        }
+
         private Label CurrentSquareLabel(int currentSquare)
         {
             switch(currentSquare)

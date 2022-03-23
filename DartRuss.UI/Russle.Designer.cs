@@ -56,8 +56,8 @@
             this.l0 = new System.Windows.Forms.Label();
             this.l1 = new System.Windows.Forms.Label();
             this.l2 = new System.Windows.Forms.Label();
+            this.l3 = new System.Windows.Forms.Label();
             this.l4 = new System.Windows.Forms.Label();
-            this.l5 = new System.Windows.Forms.Label();
             this.l6 = new System.Windows.Forms.Label();
             this.l7 = new System.Windows.Forms.Label();
             this.l8 = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@
             this.l23 = new System.Windows.Forms.Label();
             this.enter = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
-            this.lspecial = new System.Windows.Forms.Label();
+            this.l5 = new System.Windows.Forms.Label();
             this.Result = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -401,29 +401,29 @@
             this.l2.Text = "у";
             this.l2.Click += new System.EventHandler(this.Keyboard_Press);
             // 
+            // l3
+            // 
+            this.l3.AutoSize = true;
+            this.l3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.l3.Font = new System.Drawing.Font("Arial", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.l3.Location = new System.Drawing.Point(173, 623);
+            this.l3.Name = "l3";
+            this.l3.Size = new System.Drawing.Size(46, 53);
+            this.l3.TabIndex = 29;
+            this.l3.Text = "к";
+            this.l3.Click += new System.EventHandler(this.Keyboard_Press);
+            // 
             // l4
             // 
             this.l4.AutoSize = true;
             this.l4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.l4.Font = new System.Drawing.Font("Arial", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l4.Location = new System.Drawing.Point(173, 623);
+            this.l4.Location = new System.Drawing.Point(219, 623);
             this.l4.Name = "l4";
-            this.l4.Size = new System.Drawing.Size(46, 53);
-            this.l4.TabIndex = 29;
-            this.l4.Text = "к";
+            this.l4.Size = new System.Drawing.Size(48, 53);
+            this.l4.TabIndex = 30;
+            this.l4.Text = "е";
             this.l4.Click += new System.EventHandler(this.Keyboard_Press);
-            // 
-            // l5
-            // 
-            this.l5.AutoSize = true;
-            this.l5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.l5.Font = new System.Drawing.Font("Arial", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.l5.Location = new System.Drawing.Point(219, 623);
-            this.l5.Name = "l5";
-            this.l5.Size = new System.Drawing.Size(48, 53);
-            this.l5.TabIndex = 30;
-            this.l5.Text = "е";
-            this.l5.Click += new System.EventHandler(this.Keyboard_Press);
             // 
             // l6
             // 
@@ -759,25 +759,25 @@
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // lspecial
+            // l5
             // 
-            this.lspecial.AutoSize = true;
-            this.lspecial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lspecial.Font = new System.Drawing.Font("Arial", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lspecial.Location = new System.Drawing.Point(267, 623);
-            this.lspecial.Name = "lspecial";
-            this.lspecial.Size = new System.Drawing.Size(50, 53);
-            this.lspecial.TabIndex = 61;
-            this.lspecial.Text = "н";
-            this.lspecial.Click += new System.EventHandler(this.Keyboard_Press);
+            this.l5.AutoSize = true;
+            this.l5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.l5.Font = new System.Drawing.Font("Arial", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.l5.Location = new System.Drawing.Point(267, 623);
+            this.l5.Name = "l5";
+            this.l5.Size = new System.Drawing.Size(50, 53);
+            this.l5.TabIndex = 61;
+            this.l5.Text = "н";
+            this.l5.Click += new System.EventHandler(this.Keyboard_Press);
             // 
             // Result
             // 
             this.Result.AutoSize = true;
-            this.Result.Font = new System.Drawing.Font("Arial Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Result.Location = new System.Drawing.Point(110, 487);
+            this.Result.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Result.Location = new System.Drawing.Point(26, 494);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(0, 136);
+            this.Result.Size = new System.Drawing.Size(0, 68);
             this.Result.TabIndex = 62;
             // 
             // Russle
@@ -786,7 +786,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 1010);
             this.Controls.Add(this.Result);
-            this.Controls.Add(this.lspecial);
+            this.Controls.Add(this.l5);
             this.Controls.Add(this.back);
             this.Controls.Add(this.enter);
             this.Controls.Add(this.l31);
@@ -815,8 +815,8 @@
             this.Controls.Add(this.l8);
             this.Controls.Add(this.l7);
             this.Controls.Add(this.l6);
-            this.Controls.Add(this.l5);
             this.Controls.Add(this.l4);
+            this.Controls.Add(this.l3);
             this.Controls.Add(this.l2);
             this.Controls.Add(this.l1);
             this.Controls.Add(this.l0);
@@ -882,8 +882,8 @@
         private Label l0;
         private Label l1;
         private Label l2;
+        private Label l3;
         private Label l4;
-        private Label l5;
         private Label l6;
         private Label l7;
         private Label l8;
@@ -912,7 +912,7 @@
         private Label l23;
         private Button enter;
         private Button back;
-        private Label lspecial;
+        private Label l5;
         private Label Result;
     }
 }
